@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <form action="" id="form">
+      <h1>User Details</h1>
+      <span><sup>*</sup>All the fields should be filled mandatorily</span>
+      <label
+        >First name<sup>*</sup><br />
+        <input
+          type="text"
+          name="fname"
+          placeholder="Enter first name"
+          pattern="[A-Za-z]+"
+          title="Empty Input not allowed"
+          required
+          id="fname"
+        />
+        <span id="fname_error"
+          >The input should contain alphabets only. Numbers, special characters,
+          punctuations and empty input not allowed.</span
+        ></label
+      >
+
+      <label
+        >Second name<sup>*</sup><br />
+        <input
+          type="text"
+          name="lname"
+          placeholder="Enter last name"
+          pattern="^(?!\s*$).+"
+          title="Empty Input not allowed"
+          required
+          id="lname"
+        />
+        <span id="lname_error"
+          >The input should contain alphabets only. Numbers, special characters,
+          punctuations and empty input not allowed.</span
+        ></label
+      >
+
+      <label
+        >Date Of Birth<sup>*</sup><br />
+        <div class="horizontal">
+          <input
+            type="date"
+            name="dob"
+            pattern="^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$"
+            id="dob"
+            onchange="age_cal()"
+          />
+          <!-- value="2000-01-01" -->
+          <span id="age"></span>
+        </div>
+        <span id="dob_error">Not for ages under 18. 18 or above only.</span>
+        <span id="no_dob">No valid date of birth set</span></label
+      >
+
+      <label
+        >Contact number<sup>*</sup><br />
+        <input
+          type="number"
+          placeholder="Enter contact number"
+          pattern="^[0-9]{10}$"
+          name="contact"
+          id="contact"
+        />
+        <span id="contact_error">Invalid number. Enter 10 digits.</span></label
+      >
+
+      <label
+        >Email ID<sup>*</sup><br />
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter Email ID"
+          pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
+          id="email"
+        />
+        <span id="email_error"
+          >Invalid email. Include '@' and add the domain.</span
+        ></label
+      >
+
+      <label
+        >Password<sup>*</sup>
+        <br />
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter password"
+          id="pass"
+      /></label>
+
+      <label
+        >Confirm Password<sup>*</sup>
+        <br />
+        <input
+          type="password"
+          name="cpassword"
+          placeholder="Enter password again. It should match the above field."
+          id="cpass"
+        />
+        <span id="unmatched"
+          >Password doesn't match. Retype the password.</span
+        ></label
+      >
+
+      <div class="horizontal">
+        <button type="submit">Submit</button>
+        <button type="reset">Clear</button>
+      </div>
+      <span id="submit_error"
+        >Fill all the required fields with valid information</span
+      >
+    </form>
+    <script src="index.js"></script>
+  </body>
+</html>
