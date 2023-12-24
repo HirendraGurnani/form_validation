@@ -58,7 +58,6 @@ h1 + span {
   margin: -20px 0 0 0;
 }
 
-
 input[type="date"] + span {
   margin: 0 0 0 0;
   display: block;

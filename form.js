@@ -81,8 +81,8 @@ document.getElementById("cpass").addEventListener("blur", function (event) {
 document.getElementById("form").addEventListener("submit", function (event) {
   event.preventDefault();
   age = document.getElementById("age").innerHTML;
-    var userAge = age.split(":")[1];
-    console.log(userAge);
+  var userAge = age.split(":")[1];
+  console.log(userAge);
   if (flag === 1 && userAge > 18) {
     document.getElementById("form").submit();
   } else {
